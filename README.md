@@ -80,4 +80,6 @@ relative.
       renders at 224×270, so it upscales and looks soft.
 - [ ] Re-add the x and bluesky footer links (commented out in `index.html`)
       once the handles are known.
+- [ ] Enable memberships on Buy Me a Coffee, then uncomment the "become a
+      member" button in `index.html` — the /membership URL 404s until you do.
 - [ ] Add an OG image (`assets/og.png`) and the `og:image` meta tag.
