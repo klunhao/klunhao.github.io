@@ -313,6 +313,8 @@ img { max-width: 100%; display: block; }
 
 /* ---------- ideas + now ---------- */
 .ideas-row { padding: 0 0 44px; }
+.ideas-row h2 { margin: 0 0 6px; font: 700 32px/1 var(--hand); }
+.sub { margin: 0 0 18px; font: 400 14px/1.5 var(--sans); color: rgba(var(--muted-rgb), .6); }
 
 /* Notepad: 38px rule spacing, and the idea text uses the same line-height so
    it sits on the lines instead of floating between them. */
