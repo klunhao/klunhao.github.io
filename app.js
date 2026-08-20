@@ -96,13 +96,6 @@
     $('.more', card).addEventListener('click', () => toggleCard(card));
   });
 
-  /* ---------------- ideas checklist ---------------- */
-  $$('.idea').forEach(btn => {
-    btn.addEventListener('click', () => {
-      btn.setAttribute('aria-pressed', btn.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
-    });
-  });
-
   /* ---------------- copy email ---------------- */
   const toast = $('#toast');
   let toastTimer;

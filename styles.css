@@ -19,6 +19,8 @@
   --arch:       #E5DCC2;
   --chip-live:  #B6EFCB;
   --chip-beta:  #FFE0A8;
+  --sticky:     #FCEF9C;
+  --sticky-ink: #4A3E1B;
 
   --sans:  'Space Grotesk', system-ui, sans-serif;
   --hand:  'Gaegu', 'Comic Sans MS', cursive;
@@ -49,6 +51,8 @@
   --arch:       #2C2F32;
   --chip-live:  #1F4433;
   --chip-beta:  #4A3A15;
+  --sticky:     #4A4426;
+  --sticky-ink: #F2E9C8;
 }
 
 /* ---------- base ---------- */
@@ -312,15 +316,14 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------- ideas + now ---------- */
-.ideas-row { padding: 0 0 44px; }
-.ideas-row h2 { margin: 0 0 6px; font: 700 32px/1 var(--hand); }
-.sub { margin: 0 0 18px; font: 400 14px/1.5 var(--sans); color: rgba(var(--muted-rgb), .6); }
+.ideas-col h2 { margin: 0 0 10px; font: 700 26px/1 var(--hand); }
+.sub { margin: 10px 0 0; font: 400 14px/1.5 var(--sans); color: rgba(var(--muted-rgb), .6); }
 
 /* Notepad: 38px rule spacing, and the idea text uses the same line-height so
    it sits on the lines instead of floating between them. */
 .notepad {
-  position: relative; max-width: 680px;
-  padding: 22px 26px 24px 62px;
+  position: relative;
+  padding: 18px 20px 20px 52px;
   background-color: var(--surface);
   background-image: repeating-linear-gradient(
     to bottom, transparent 0 37px, rgba(var(--muted-rgb), .22) 37px 38px);
@@ -331,54 +334,52 @@ img { max-width: 100%; display: block; }
   transform: rotate(-.4deg);
 }
 .notepad::before {           /* the red margin rule */
-  content: ''; position: absolute; left: 46px; top: 0; bottom: 0;
+  content: ''; position: absolute; left: 38px; top: 0; bottom: 0;
   width: 2px; background: var(--deep); opacity: .38;
 }
 .notepad::after {            /* punched holes */
-  content: ''; position: absolute; left: 16px; top: 30px; bottom: 30px; width: 14px;
+  content: ''; position: absolute; left: 11px; top: 26px; bottom: 26px; width: 14px;
   background-image: radial-gradient(circle at 7px 7px,
     var(--paper) 0 4.5px, var(--ink) 4.6px 6px, transparent 6.2px);
   background-size: 14px 76px; background-repeat: repeat-y;
 }
 
 .ideas { list-style: none; margin: 0; padding: 0; position: relative; z-index: 1; }
-
-.idea {
-  display: flex; gap: 12px; align-items: flex-start; text-align: left; width: 100%;
-  background: none; border: none; padding: 0; cursor: pointer; border-radius: 6px;
-  transition: background .14s;
-}
-.idea .txt {
-  flex: 1; font: 400 19px/38px var(--hand);
+.ideas li {
+  font: 400 18px/38px var(--hand);
   color: rgba(var(--muted-rgb), .9);
 }
-.box {
-  flex: none; width: 17px; height: 17px; margin-top: 10px;
-  border: 2px solid var(--ink); border-radius: 4px; background: transparent;
-  font: 700 12px/13px var(--sans); color: var(--ink); text-align: center;
-}
-.idea[aria-pressed="true"] { background: rgba(var(--accent-rgb), .2); }
-.idea[aria-pressed="true"] .box { background: var(--accent); }
-.idea[aria-pressed="true"] .box::after { content: "\2713"; }
-.idea[aria-pressed="true"] .txt {
-  color: rgba(var(--muted-rgb), .45); text-decoration: line-through;
+.ideas li::before { content: "— "; color: var(--deep); opacity: .55; }
+
+/* the row under the hero mirrors the hero's own columns, so the notepad
+   lands directly beneath the photo */
+.below-hero {
+  display: grid; grid-template-columns: minmax(0, 1fr) 308px;
+  gap: 44px; align-items: start; margin: 0 0 44px;
 }
 
-.now-strip {
-  padding: 20px 26px; margin: 0 0 44px;
+.now-note {
+  position: relative; padding: 26px 26px 24px;
+  background: var(--sticky); color: var(--sticky-ink);
+  border-radius: 2px; transform: rotate(-1.1deg);
+  box-shadow: 0 12px 22px -10px rgba(0,0,0,.45), 0 2px 0 rgba(0,0,0,.05);
+}
+.pin {
+  position: absolute; top: -11px; left: 50%; margin-left: -11px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, rgba(255,255,255,.55) 0 17%, transparent 18%), var(--deep);
   border: 2px solid var(--ink);
-  border-radius: 20px 215px 18px 225px / 210px 18px 220px 20px;
-  background: var(--soft); transform: rotate(-.5deg);
+  box-shadow: 0 4px 6px -2px rgba(0,0,0,.45);
 }
 .now-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
-.now-strip h2 { margin: 0; font: 700 26px/1 var(--hand); }
-.now-head .kicker { margin: 0; font-size: 11px; color: rgba(var(--muted-rgb), .55); }
+.now-note h2 { margin: 0; font: 700 26px/1 var(--hand); color: var(--sticky-ink); }
+.now-head .kicker { margin: 0; font-size: 11px; color: var(--sticky-ink); opacity: .6; }
 .now-list { margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .now-list dt {
   font: 700 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase;
-  color: rgba(var(--muted-rgb), .55); margin-bottom: 4px;
+  color: var(--sticky-ink); opacity: .6; margin-bottom: 4px;
 }
-.now-list dd { margin: 0; font: 400 17px/1.4 var(--sans); color: var(--ink); }
+.now-list dd { margin: 0; font: 400 17px/1.4 var(--sans); color: var(--sticky-ink); }
 
 /* ---------- support ---------- */
 .support {
@@ -470,16 +471,15 @@ footer h2 { margin: 0 0 12px; font: 700 30px/1 var(--hand); }
     padding: 30px 0 34px; align-items: stretch;
   }
   .hero h1 { font-size: 42px; max-width: none; }
-  .photo-wrap { justify-self: center; align-self: flex-start; }
+  .photo-wrap { align-self: center; }
   .photo { width: 220px; height: 278px; }
 
   .grid { grid-template-columns: 1fr; gap: 16px; }
   .shot { height: 132px; }
 
-  .notepad { padding: 20px 18px 20px 52px; }
-  .notepad::before { left: 38px; }
-  .notepad::after { left: 12px; }
-  .now-strip { padding: 18px 20px; }
+  .below-hero { grid-template-columns: 1fr; gap: 34px; }
+  .ideas-col { max-width: 420px; }
+  .now-note { padding: 24px 20px 20px; }
   .now-list { grid-template-columns: 1fr; gap: 14px; }
 
   .support { padding: 20px; }
