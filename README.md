@@ -70,8 +70,6 @@ relative.
 
 ## Still to do
 
-- [ ] **`hi@khailunhao.dev` is the only contact route on the page.** Confirm the
-      domain is registered and the mailbox receives, or swap in an address that does.
 - [ ] Get the **direct** Chrome Web Store URL for InstaSave from the developer
       dashboard. The card currently links to a store *search*, which is what the
       extension itself uses — a real listing URL is better.
