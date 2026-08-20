@@ -11,6 +11,10 @@
 <meta property="og:title" content="khailunhao — i build things for the internet">
 <meta property="og:description" content="Solo developer. Browser extensions, small websites, and tools.">
 <meta name="twitter:card" content="summary_large_image">
+<meta property="og:url" content="https://klunhao.github.io/">
+<meta property="og:image" content="https://klunhao.github.io/assets/me.jpg">
+<meta name="twitter:image" content="https://klunhao.github.io/assets/me.jpg">
+<link rel="canonical" href="https://klunhao.github.io/">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,7 +78,7 @@
 
     <figure class="photo-wrap">
       <div class="photo">
-        <img src="assets/me.jpg" alt="Portrait of khailunhao" loading="lazy" onerror="this.closest('.photo').classList.add('empty');this.remove()">
+        <img src="assets/me.jpg" alt="Portrait of khailunhao" width="600" height="760" fetchpriority="high" onerror="this.closest('.photo').classList.add('empty');this.remove()">
         <span class="photo-hint">drop a photo at assets/me.jpg</span>
       </div>
       <div class="tape" aria-hidden="true"></div>
@@ -83,6 +87,20 @@
   </section>
 
   <!-- ─────────────────────── workshop ─────────────────────── -->
+
+  <!-- ── what i'm up to — sits right under the hero as a heads-up ── -->
+  <section class="now-strip" id="now">
+    <div class="now-head">
+      <h2>now</h2>
+      <p class="kicker">updated this month</p>
+    </div>
+    <dl class="now-list">
+      <div><dt>learning</dt><dd>Rust.</dd></div>
+      <div><dt>building</dt><dd>Ultimate Video Downloader, and starting on a browser video editor.</dd></div>
+      <div><dt>open to</dt><dd>Freelance, small contracts, odd jobs.</dd></div>
+    </dl>
+  </section>
+
   <section id="workshop" class="workshop">
     <div class="section-head">
       <h2>my workshop</h2>
@@ -172,15 +190,6 @@
       </ul>
     </div>
 
-    <div class="now-card" id="now">
-      <h2>now</h2>
-      <p class="kicker">updated this month</p>
-      <dl class="now-list">
-        <div><dt>learning</dt><dd>WebCodecs — video encoding in the browser, without a server.</dd></div>
-        <div><dt>building</dt><dd>Ultimate Video Downloader. InstaSave 1.3 is packaged and waiting on the store.</dd></div>
-        <div><dt>open to</dt><dd>Freelance, small contracts, odd jobs.</dd></div>
-      </dl>
-    </div>
   </section>
 
   <!-- ───────────────────── support ───────────────────── -->
@@ -194,6 +203,7 @@
         <a class="btn-primary" href="https://buymeacoffee.com/lunhao" rel="noopener">buy me a coffee</a>
         <!-- Enable memberships on Buy Me a Coffee and this button works; the URL 404s until then:
         <a class="btn-secondary" href="https://buymeacoffee.com/lunhao/membership" rel="noopener">become a member</a> -->
+      </div>
     </div>
 
     <div class="collab">
