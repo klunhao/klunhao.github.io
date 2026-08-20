@@ -196,11 +196,6 @@ img { max-width: 100%; display: block; }
   margin: 0; font: 700 60px/.96 var(--hand);
   max-width: 620px; overflow-wrap: break-word;
 }
-.hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 24px; }
-.hero-actions .squiggle-link {
-  font: 400 18px/1 var(--sans); color: rgba(var(--muted-rgb), .7);
-  text-underline-offset: 5px; text-decoration-thickness: 1.5px;
-}
 
 .photo-wrap { position: relative; justify-self: end; margin: 0; }
 .photo {
@@ -344,7 +339,7 @@ img { max-width: 100%; display: block; }
 }
 
 .now-note {
-  position: relative; margin-top: 32px; max-width: 560px;
+  position: relative; margin-top: 34px; max-width: 560px;
   padding: 24px 26px 22px;
   background: var(--sticky); color: var(--sticky-ink);
   border-radius: 2px; transform: rotate(-1.1deg);
