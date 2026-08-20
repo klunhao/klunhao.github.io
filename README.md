@@ -71,15 +71,12 @@ relative.
 ## Still to do
 
 - [ ] Get the **direct** Chrome Web Store URL for InstaSave from the developer
-      dashboard. The card currently links to a store *search*, which is what the
-      extension itself uses — a real listing URL is better.
+      dashboard. The card links to a store *search*, which is what the extension
+      itself uses — a real listing URL (with the 32-char extension ID) is better.
 - [ ] Push `instasave` and `ultimate-video-downloader` to GitHub, then add
       "source" links to both cards. Neither repo exists remotely right now.
-- [ ] Screenshots: `assets/instasave.png`, `assets/uvd.png`.
-- [ ] Replace `assets/me.jpg` — the current file is 124×220, and the hero slot
-      renders at 224×270, so it upscales and looks soft.
-- [ ] Re-add the x and bluesky footer links (commented out in `index.html`)
-      once the handles are known.
 - [ ] Enable memberships on Buy Me a Coffee, then uncomment the "become a
       member" button in `index.html` — the /membership URL 404s until you do.
-- [ ] Add an OG image (`assets/og.png`) and the `og:image` meta tag.
+- [ ] Add the bluesky handle (commented out in `index.html`).
+- [ ] Add an OG image (`assets/og.png`) — `og:image` currently points at the
+      portrait, which is fine but not a real share card.

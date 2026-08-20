@@ -80,30 +80,6 @@
     $('.more', card).addEventListener('click', () => toggleCard(card));
   });
 
-  /* ---------------- copy email ---------------- */
-  const toast = $('#toast');
-  let toastTimer;
-
-  function flash(msg) {
-    toast.textContent = msg;
-    toast.classList.add('is-on');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('is-on'), 1800);
-  }
-
-  $$('.copy-email').forEach(btn => {
-    btn.addEventListener('click', async () => {
-      const email = btn.dataset.email;
-      try {
-        await navigator.clipboard.writeText(email);
-        flash('copied to clipboard ✓');
-      } catch (e) {
-        // Clipboard blocked (insecure context, denied permission) — fall back to mail.
-        location.href = 'mailto:' + email;
-      }
-    });
-  });
-
   /* ---------------- active dot on the side nav ---------------- */
   const links = new Map();
   $$('.sidenav a[href^="#"]').forEach(a => links.set(a.getAttribute('href').slice(1), a));
@@ -112,10 +88,24 @@
 
   if (targets.length && 'IntersectionObserver' in window) {
     const seen = new Set();
+    const ids = [...links.keys()];
+    const lastId = ids[ids.length - 1];
+
+    // The observer's band never reaches the final section once the page has
+    // bottomed out, so the last dot would never light. Force it there.
+    const paint = () => {
+      const doc = document.documentElement;
+      const atBottom = doc.scrollTop + doc.clientHeight >= doc.scrollHeight - 2;
+      links.forEach((a, id) =>
+        a.classList.toggle('is-active', atBottom ? id === lastId : seen.has(id)));
+    };
+
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => e.isIntersecting ? seen.add(e.target.id) : seen.delete(e.target.id));
-      links.forEach((a, id) => a.classList.toggle('is-active', seen.has(id)));
+      paint();
     }, { rootMargin: '-40% 0px -55% 0px' });
+
     targets.forEach(t => io.observe(t));
+    addEventListener('scroll', paint, { passive: true });
   }
 })();
