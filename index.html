@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>khailunhao — i build things for the internet</title>
+<meta name="description" content="Solo developer. Browser extensions, small websites, and tools. Available for freelance and small contracts.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪴</text></svg>">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="khailunhao — i build things for the internet">
+<meta property="og:description" content="Solo developer. Browser extensions, small websites, and tools.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script>
+  // Applied before first paint so the chosen theme never flashes.
+  try {
+    var t = localStorage.getItem('theme');
+    if (!t) t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    document.documentElement.dataset.theme = t;
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#workshop">skip to projects</a>
+
+<div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress"></div></div>
+
+<header class="bar">
+  <div class="bar-inner">
+    <a class="wordmark" href="#top">khailunhao</a>
+
+    <nav class="nav" aria-label="Sections">
+      <a href="#workshop">workshop</a>
+      <a href="#ideas">ideas</a>
+      <a href="#now">now</a>
+      <a href="#support">support</a>
+    </nav>
+
+    <div class="dots" role="group" aria-label="Colour theme">
+      <button type="button" class="dot" data-theme-pick="light" title="Light" aria-label="Light theme"></button>
+      <button type="button" class="dot" data-theme-pick="dark" title="Dark" aria-label="Dark theme"></button>
+    </div>
+
+    <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mobile-nav" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Sections" hidden>
+    <a href="#workshop">workshop</a>
+    <a href="#ideas">ideas</a>
+    <a href="#now">now</a>
+    <a href="#support">support</a>
+  </nav>
+</header>
+
+<main class="wrap" id="top">
+
+  <!-- ───────────────────────── hero ───────────────────────── -->
+  <section class="hero">
+    <div>
+      <p class="eyebrow">solo dev · available for work</p>
+      <h1>i build things for the internet.</h1>
+      <div class="hero-actions">
+        <a class="squiggle-link" href="#support">support what i make</a>
+      </div>
+    </div>
+
+    <figure class="photo-wrap">
+      <div class="photo">
+        <img src="assets/me.jpg" alt="Portrait of khailunhao" loading="lazy" onerror="this.closest('.photo').classList.add('empty');this.remove()">
+        <span class="photo-hint">drop a photo at assets/me.jpg</span>
+      </div>
+      <div class="tape" aria-hidden="true"></div>
+      <figcaption>that's me</figcaption>
+    </figure>
+  </section>
+
+  <!-- ─────────────────────── workshop ─────────────────────── -->
+  <section id="workshop" class="workshop">
+    <div class="section-head">
+      <h2>the workshop</h2>
+      <div class="filters" role="group" aria-label="Filter projects">
+        <button type="button" class="chip-btn is-on" data-filter="everything" aria-pressed="true">everything</button>
+        <button type="button" class="chip-btn" data-filter="extension" aria-pressed="false">extensions</button>
+        <button type="button" class="chip-btn" data-filter="site" aria-pressed="false">sites</button>
+      </div>
+    </div>
+
+    <div class="grid" id="project-grid">
+
+      <!-- ── PROJECT CARD — copy this whole <article> to add another ── -->
+      <article class="card" data-kind="extension">
+        <div class="card-head">
+          <div class="shot">
+            <img src="assets/project-01.png" alt="" loading="lazy" onerror="this.closest('.shot').classList.add('empty');this.remove()">
+            <span class="shot-hint">assets/project-01.png</span>
+          </div>
+          <div class="card-body">
+            <p class="kicker">browser extension</p>
+            <div class="title-row">
+              <h3>Project 01</h3>
+              <span class="chip" data-status="live">live</span>
+            </div>
+            <p class="blurb">One line about what it does and who it's for.</p>
+          </div>
+        </div>
+
+        <div class="detail" id="detail-1" hidden>
+          <dl class="facts">
+            <div><dt>built with</dt><dd>TypeScript, Chrome APIs</dd></div>
+            <div><dt>users</dt><dd>1.2k weekly</dd></div>
+          </dl>
+          <p>A slightly longer note on the problem it solves, why I built it, and what I'd change if I started again.</p>
+          <div class="links">
+            <a class="squiggle-link" href="#">visit site</a>
+            <a class="quiet-link" href="#">source</a>
+          </div>
+        </div>
+
+        <div class="card-foot"><button type="button" class="more" aria-expanded="false" aria-controls="detail-1">+ more about this</button></div>
+      </article>
+      <!-- ── /PROJECT CARD ── -->
+
+      <article class="card" data-kind="extension">
+        <div class="card-head">
+          <div class="shot">
+            <img src="assets/project-02.png" alt="" loading="lazy" onerror="this.closest('.shot').classList.add('empty');this.remove()">
+            <span class="shot-hint">assets/project-02.png</span>
+          </div>
+          <div class="card-body">
+            <p class="kicker">browser extension</p>
+            <div class="title-row">
+              <h3>Project 02</h3>
+              <span class="chip" data-status="beta">beta</span>
+            </div>
+            <p class="blurb">One line about what it does and who it's for.</p>
+          </div>
+        </div>
+
+        <div class="detail" id="detail-2" hidden>
+          <dl class="facts">
+            <div><dt>built with</dt><dd>Rust, WASM</dd></div>
+            <div><dt>users</dt><dd>invite only</dd></div>
+          </dl>
+          <p>Still rough. The Rust and WASM part is the whole reason this exists. The rest is scaffolding.</p>
+          <div class="links">
+            <a class="squiggle-link" href="#">visit site</a>
+            <a class="quiet-link" href="#">source</a>
+          </div>
+        </div>
+
+        <div class="card-foot"><button type="button" class="more" aria-expanded="false" aria-controls="detail-2">+ more about this</button></div>
+      </article>
+
+      <article class="card" data-kind="site">
+        <div class="card-head">
+          <div class="shot">
+            <img src="assets/project-03.png" alt="" loading="lazy" onerror="this.closest('.shot').classList.add('empty');this.remove()">
+            <span class="shot-hint">assets/project-03.png</span>
+          </div>
+          <div class="card-body">
+            <p class="kicker">website</p>
+            <div class="title-row">
+              <h3>Project 03</h3>
+              <span class="chip" data-status="archived">archived</span>
+            </div>
+            <p class="blurb">One line about what it does and who it's for.</p>
+          </div>
+        </div>
+
+        <div class="detail" id="detail-3" hidden>
+          <dl class="facts">
+            <div><dt>built with</dt><dd>Astro, SQLite</dd></div>
+            <div><dt>users</dt><dd>retired 2025</dd></div>
+          </dl>
+          <p>Ran it for two years, then the API it depended on shut down. Kept here because it taught me a lot.</p>
+          <div class="links">
+            <a class="squiggle-link" href="#">visit site</a>
+            <a class="quiet-link" href="#">source</a>
+          </div>
+        </div>
+
+        <div class="card-foot"><button type="button" class="more" aria-expanded="false" aria-controls="detail-3">+ more about this</button></div>
+      </article>
+
+    </div>
+
+    <p class="empty-note" id="empty-note" hidden>nothing here yet, try another filter.</p>
+  </section>
+
+  <!-- ─────────────────── ideas + now ─────────────────── -->
+  <section id="ideas" class="ideas-row">
+    <div>
+      <h2>ideas i haven't built</h2>
+      <p class="sub">Tick one if you want to steal it. I won't mind.</p>
+      <ul class="ideas">
+        <li><button type="button" class="idea" aria-pressed="false"><span class="box" aria-hidden="true"></span><span>An idea, described in one honest sentence.</span></button></li>
+        <li><button type="button" class="idea" aria-pressed="false"><span class="box" aria-hidden="true"></span><span>Another one. Probably a weekend, probably useful.</span></button></li>
+        <li><button type="button" class="idea" aria-pressed="false"><span class="box" aria-hidden="true"></span><span>The one I keep coming back to and never start.</span></button></li>
+        <li><button type="button" class="idea" aria-pressed="false"><span class="box" aria-hidden="true"></span><span>A bad idea I'm keeping here for honesty.</span></button></li>
+      </ul>
+    </div>
+
+    <div class="now-card" id="now">
+      <h2>now</h2>
+      <p class="kicker">updated this month</p>
+      <dl class="now-list">
+        <div><dt>learning</dt><dd>Rust and WebAssembly.</dd></div>
+        <div><dt>building</dt><dd>A new extension, slowly.</dd></div>
+        <div><dt>open to</dt><dd>Freelance, small contracts, odd jobs.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ───────────────────── support ───────────────────── -->
+  <section id="support" class="support">
+    <div class="support-grid">
+      <div>
+        <h2>support me</h2>
+        <p>If something here was useful, you can leave a one-time tip or become a member. Both go through Buy Me a Coffee.</p>
+      </div>
+      <div class="support-btns">
+        <a class="btn-primary" href="https://buymeacoffee.com/khailunhao" rel="noopener">buy me a coffee</a>
+        <a class="btn-secondary" href="https://buymeacoffee.com/khailunhao/membership" rel="noopener">become a member</a>
+      </div>
+    </div>
+
+    <div class="collab">
+      <p>Got a project idea you want to collaborate on? Hit me up.</p>
+      <div class="collab-links">
+        <button type="button" class="squiggle-link copy-email" data-email="hi@khailunhao.dev">hi@khailunhao.dev</button>
+        <span class="or">or</span>
+        <a class="squiggle-link" href="https://x.com/" rel="noopener">x / twitter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────── footer ───────────────────── -->
+  <footer>
+    <div>
+      <h2>say hello</h2>
+      <button type="button" class="email copy-email" data-email="hi@khailunhao.dev">hi@khailunhao.dev</button>
+    </div>
+    <nav class="socials" aria-label="Elsewhere">
+      <a href="https://github.com/klunhao" rel="me noopener">github</a>
+      <a href="https://x.com/" rel="me noopener">x</a>
+      <a href="https://bsky.app/" rel="me noopener">bluesky</a>
+    </nav>
+  </footer>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
