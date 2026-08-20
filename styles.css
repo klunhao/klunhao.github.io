@@ -100,14 +100,6 @@ img { max-width: 100%; display: block; }
 
 @keyframes fadeup { from { transform: translateY(9px); opacity: 0 } to { transform: none; opacity: 1 } }
 
-/* ---------- scroll progress ---------- */
-.progress-track { position: fixed; inset: 0 0 auto 0; height: 4px; z-index: 60; }
-.progress-bar {
-  height: 100%; width: 0;
-  background: var(--deep);
-  transition: width .08s linear;
-}
-
 /* ---------- header ---------- */
 .bar {
   position: sticky; top: 0; z-index: 50;
@@ -193,7 +185,7 @@ img { max-width: 100%; display: block; }
 /* ---------- hero ---------- */
 .hero {
   display: grid; grid-template-columns: minmax(0, 1fr) 308px;
-  gap: 44px; align-items: center; padding: 52px 0 46px;
+  gap: 44px; align-items: start; padding: 52px 0 46px;
 }
 .eyebrow {
   margin: 0 0 12px;
@@ -316,14 +308,15 @@ img { max-width: 100%; display: block; }
 }
 
 /* ---------- ideas + now ---------- */
+.ideas-col { padding: 0 0 44px; }
 .ideas-col h2 { margin: 0 0 10px; font: 700 26px/1 var(--hand); }
 .sub { margin: 10px 0 0; font: 400 14px/1.5 var(--sans); color: rgba(var(--muted-rgb), .6); }
 
 /* Notepad: 38px rule spacing, and the idea text uses the same line-height so
    it sits on the lines instead of floating between them. */
 .notepad {
-  position: relative;
-  padding: 18px 20px 20px 52px;
+  position: relative; max-width: 700px;
+  padding: 22px 26px 24px 62px;
   background-color: var(--surface);
   background-image: repeating-linear-gradient(
     to bottom, transparent 0 37px, rgba(var(--muted-rgb), .22) 37px 38px);
@@ -334,11 +327,11 @@ img { max-width: 100%; display: block; }
   transform: rotate(-.4deg);
 }
 .notepad::before {           /* the red margin rule */
-  content: ''; position: absolute; left: 38px; top: 0; bottom: 0;
+  content: ''; position: absolute; left: 46px; top: 0; bottom: 0;
   width: 2px; background: var(--deep); opacity: .38;
 }
 .notepad::after {            /* punched holes */
-  content: ''; position: absolute; left: 11px; top: 26px; bottom: 26px; width: 14px;
+  content: ''; position: absolute; left: 16px; top: 30px; bottom: 30px; width: 14px;
   background-image: radial-gradient(circle at 7px 7px,
     var(--paper) 0 4.5px, var(--ink) 4.6px 6px, transparent 6.2px);
   background-size: 14px 76px; background-repeat: repeat-y;
@@ -351,15 +344,9 @@ img { max-width: 100%; display: block; }
 }
 .ideas li::before { content: "— "; color: var(--deep); opacity: .55; }
 
-/* the row under the hero mirrors the hero's own columns, so the notepad
-   lands directly beneath the photo */
-.below-hero {
-  display: grid; grid-template-columns: minmax(0, 1fr) 308px;
-  gap: 44px; align-items: start; margin: 0 0 44px;
-}
-
 .now-note {
-  position: relative; padding: 26px 26px 24px;
+  position: relative; margin-top: 32px; max-width: 560px;
+  padding: 24px 26px 22px;
   background: var(--sticky); color: var(--sticky-ink);
   border-radius: 2px; transform: rotate(-1.1deg);
   box-shadow: 0 12px 22px -10px rgba(0,0,0,.45), 0 2px 0 rgba(0,0,0,.05);
@@ -374,7 +361,7 @@ img { max-width: 100%; display: block; }
 .now-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
 .now-note h2 { margin: 0; font: 700 26px/1 var(--hand); color: var(--sticky-ink); }
 .now-head .kicker { margin: 0; font-size: 11px; color: var(--sticky-ink); opacity: .6; }
-.now-list { margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.now-list { margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 24px; }
 .now-list dt {
   font: 700 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase;
   color: var(--sticky-ink); opacity: .6; margin-bottom: 4px;
@@ -477,9 +464,11 @@ footer h2 { margin: 0 0 12px; font: 700 30px/1 var(--hand); }
   .grid { grid-template-columns: 1fr; gap: 16px; }
   .shot { height: 132px; }
 
-  .below-hero { grid-template-columns: 1fr; gap: 34px; }
-  .ideas-col { max-width: 420px; }
-  .now-note { padding: 24px 20px 20px; }
+  .now-note { padding: 22px 20px 18px; margin-top: 26px; }
+  .now-list { grid-template-columns: 1fr; gap: 14px; }
+  .notepad { padding: 18px 18px 20px 50px; }
+  .notepad::before { left: 36px; }
+  .notepad::after { left: 10px; }
   .now-list { grid-template-columns: 1fr; gap: 14px; }
 
   .support { padding: 20px; }
@@ -489,7 +478,7 @@ footer h2 { margin: 0 0 12px; font: 700 30px/1 var(--hand); }
 }
 
 @media print {
-  .bar, .progress-track, .toast, .filters, .card-foot { display: none; }
+  .bar, .sidenav, .toast, .filters, .card-foot { display: none; }
   .detail[hidden] { display: block !important; }
   body { background: #fff; }
 }

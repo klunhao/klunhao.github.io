@@ -35,11 +35,10 @@
 
 <nav class="sidenav" aria-label="Sections">
   <a href="#now" data-label="now"><span class="vh">now</span></a>
+  <a href="#ideas" data-label="ideas"><span class="vh">ideas</span></a>
   <a href="#workshop" data-label="workshop"><span class="vh">workshop</span></a>
   <a href="#support" data-label="support"><span class="vh">support</span></a>
 </nav>
-
-<div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress"></div></div>
 
 <header class="bar">
   <div class="bar-inner">
@@ -64,6 +63,18 @@
       <div class="hero-actions">
         <a class="squiggle-link" href="#support">support what i make</a>
       </div>
+
+      <section class="now-note" id="now">
+        <div class="pin" aria-hidden="true"></div>
+        <div class="now-head">
+          <h2>now</h2>
+          <p class="kicker">updated this month</p>
+        </div>
+        <dl class="now-list">
+          <div><dt>learning</dt><dd>Rust, and gen-AI evals (RAGAS).</dd></div>
+          <div><dt>building</dt><dd>Ultimate Video Downloader, and starting on a browser video editor.</dd></div>
+        </dl>
+      </section>
     </div>
 
     <figure class="photo-wrap">
@@ -76,24 +87,8 @@
     </figure>
   </section>
 
-  <!-- ─────────────────────── workshop ─────────────────────── -->
-
-  <!-- ── what i'm up to + what's rattling around — mirrors the hero columns ── -->
-  <div class="below-hero">
-  <section class="now-note" id="now">
-    <div class="pin" aria-hidden="true"></div>
-    <div class="now-head">
-      <h2>now</h2>
-      <p class="kicker">updated this month</p>
-    </div>
-    <dl class="now-list">
-      <div><dt>learning</dt><dd>Rust.</dd></div>
-      <div><dt>building</dt><dd>Ultimate Video Downloader, and starting on a browser video editor.</dd></div>
-      <div><dt>open to</dt><dd>Freelance, small contracts, odd jobs.</dd></div>
-    </dl>
-  </section>
-
-  <aside class="ideas-col" id="ideas">
+  <!-- ─────────────── things on my mind ─────────────── -->
+  <section class="ideas-col" id="ideas">
     <h2>things on my mind</h2>
     <div class="notepad">
       <ul class="ideas">
@@ -104,9 +99,9 @@
       </ul>
     </div>
     <p class="sub">steal any of them. i won't mind.</p>
-  </aside>
-  </div>
+  </section>
 
+  <!-- ─────────────────────── workshop ─────────────────────── -->
   <section id="workshop" class="workshop">
     <div class="section-head">
       <h2>my workshop</h2>

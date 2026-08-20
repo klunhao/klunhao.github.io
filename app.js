@@ -30,22 +30,6 @@
     if (!picked) setTheme(e.matches ? 'dark' : 'light', false);
   });
 
-  /* ---------------- scroll progress ---------------- */
-  const bar = $('#progress');
-  let ticking = false;
-
-  function paintProgress() {
-    const doc = document.documentElement;
-    const max = doc.scrollHeight - doc.clientHeight;
-    bar.style.width = (max > 0 ? (doc.scrollTop / max) * 100 : 0).toFixed(2) + '%';
-    ticking = false;
-  }
-
-  addEventListener('scroll', () => {
-    if (!ticking) { ticking = true; requestAnimationFrame(paintProgress); }
-  }, { passive: true });
-  paintProgress();
-
   /* ---------------- workshop filter ---------------- */
   const cards     = $$('#project-grid .card');
   const emptyNote = $('#empty-note');
