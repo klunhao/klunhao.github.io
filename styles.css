@@ -412,25 +412,22 @@ img { max-width: 100%; display: block; }
 footer {
   padding: 34px 0 46px;
   border-top: 2px dashed var(--hair);
-  display: flex; align-items: flex-end; justify-content: space-between;
+  display: flex; align-items: center; justify-content: space-between;
   gap: 22px; flex-wrap: wrap;
 }
-footer h2 { margin: 0 0 12px; font: 700 30px/1 var(--hand); }
-.email {
-  font: 400 22px/1 var(--sans); color: var(--ink);
-  background: none; border: none; padding: 0; cursor: pointer;
-  text-decoration: underline wavy var(--accent) 2px; text-underline-offset: 6px;
-}
-.socials { display: flex; gap: 8px; flex-wrap: wrap; }
+footer h2 { margin: 0; font: 700 30px/1 var(--hand); }
+
+.socials { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 .socials a {
-  font: 400 18px/1 var(--hand); color: var(--ink); text-decoration: none;
-  padding: 8px 15px; border: 2px solid var(--ink);
-  border-radius: var(--pill);
+  display: grid; place-items: center; width: 46px; height: 46px;
+  color: var(--ink); text-decoration: none;
+  border: 2px solid var(--ink); border-radius: var(--pill);
+  transition: background .16s ease, transform .16s ease;
 }
 .socials a:nth-child(2) { border-radius: 16px 205px 18px 200px / 200px 18px 210px 16px; }
 .socials a:nth-child(3) { border-radius: 205px 18px 200px 16px / 16px 210px 18px 205px; }
 .socials a:nth-child(4) { border-radius: 18px 200px 16px 210px / 205px 16px 200px 18px; }
-.socials a:hover { background: var(--accent); }
+.socials a:hover { background: var(--accent); transform: translateY(-2px); }
 
 /* ---------- toast ---------- */
 .toast {
