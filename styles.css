@@ -19,6 +19,8 @@
   --arch:       #E5DCC2;
   --chip-live:  #B6EFCB;
   --chip-beta:  #FFE0A8;
+  --carrot:     #E8792A;
+  --leaf:       #3F7D3B;
 
   --sans:  'Space Grotesk', system-ui, sans-serif;
   --hand:  'Gaegu', 'Comic Sans MS', cursive;
@@ -49,6 +51,8 @@
   --arch:       #2C2F32;
   --chip-live:  #1F4433;
   --chip-beta:  #4A3A15;
+  --carrot:     #F5A24C;
+  --leaf:       #7FB069;
 }
 
 /* ---------- base ---------- */
@@ -120,7 +124,10 @@ img { max-width: 100%; display: block; }
 .wordmark {
   font: 700 25px/1 var(--hand);
   color: var(--ink); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
 }
+.carrot { flex: none; transform: rotate(-6deg); transition: transform .18s ease; }
+.wordmark:hover .carrot { transform: rotate(6deg) scale(1.08); }
 
 .nav { display: flex; gap: 4px; align-items: center; }
 .nav a {

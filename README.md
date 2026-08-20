@@ -70,9 +70,16 @@ relative.
 
 ## Still to do
 
-- [ ] Replace the three `Project 0X` placeholders with real projects.
-- [ ] Add `assets/me.jpg` and the project screenshots.
-- [ ] Fill in the real x/twitter and bluesky handles (both currently point at
-      the site root, not a profile).
-- [ ] Confirm `hi@khailunhao.dev` is a mailbox that actually receives mail.
+- [ ] **`hi@khailunhao.dev` is the only contact route on the page.** Confirm the
+      domain is registered and the mailbox receives, or swap in an address that does.
+- [ ] Get the **direct** Chrome Web Store URL for InstaSave from the developer
+      dashboard. The card currently links to a store *search*, which is what the
+      extension itself uses — a real listing URL is better.
+- [ ] Push `instasave` and `ultimate-video-downloader` to GitHub, then add
+      "source" links to both cards. Neither repo exists remotely right now.
+- [ ] Screenshots: `assets/instasave.png`, `assets/uvd.png`.
+- [ ] Replace `assets/me.jpg` — the current file is 124×220, and the hero slot
+      renders at 224×270, so it upscales and looks soft.
+- [ ] Re-add the x and bluesky footer links (commented out in `index.html`)
+      once the handles are known.
 - [ ] Add an OG image (`assets/og.png`) and the `og:image` meta tag.

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>khailunhao — i build things for the internet</title>
 <meta name="description" content="Solo developer. Browser extensions, small websites, and tools. Available for freelance and small contracts.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪴</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M14.6 5.6C17.4 6.6 18.4 8 19 10.2L5.6 20.4C4.7 21 4 20.3 4.6 19.4Z' fill='%23E8792A' stroke='%232C5B33' stroke-width='1.3' stroke-linejoin='round'/><path d='M14.9 6 13.4 2.4M16.4 6.9 18.6 3.4M17.6 8.1 21.2 6.6' stroke='%233F7D3B' stroke-width='1.6' stroke-linecap='round' fill='none'/></svg>">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="khailunhao — i build things for the internet">
@@ -33,7 +33,7 @@
 
 <header class="bar">
   <div class="bar-inner">
-    <a class="wordmark" href="#top">khailunhao</a>
+    <a class="wordmark" href="#top"><svg class="carrot" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M14.6 5.6 C17.4 6.6 18.4 8 19 10.2 L5.6 20.4 C4.7 21 4 20.3 4.6 19.4 Z" fill="var(--carrot,#E8792A)" stroke="var(--ink)" stroke-width="1.3" stroke-linejoin="round"/><path d="M11.2 11.6 12.9 13.3 M8.6 14.6 10.3 16.3" stroke="var(--ink)" stroke-width="1.1" stroke-linecap="round" opacity=".55"/><path d="M14.9 6 13.4 2.4 M16.4 6.9 18.6 3.4 M17.6 8.1 21.2 6.6" stroke="var(--leaf,#3F7D3B)" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg><span>khailunhao</span></a>
 
     <nav class="nav" aria-label="Sections">
       <a href="#workshop">workshop</a>
@@ -85,7 +85,7 @@
   <!-- ─────────────────────── workshop ─────────────────────── -->
   <section id="workshop" class="workshop">
     <div class="section-head">
-      <h2>the workshop</h2>
+      <h2>my workshop</h2>
       <div class="filters" role="group" aria-label="Filter projects">
         <button type="button" class="chip-btn is-on" data-filter="everything" aria-pressed="true">everything</button>
         <button type="button" class="chip-btn" data-filter="extension" aria-pressed="false">extensions</button>
@@ -99,28 +99,27 @@
       <article class="card" data-kind="extension">
         <div class="card-head">
           <div class="shot">
-            <img src="assets/project-01.png" alt="" loading="lazy" onerror="this.closest('.shot').classList.add('empty');this.remove()">
-            <span class="shot-hint">assets/project-01.png</span>
+            <img src="assets/instasave.png" alt="" loading="lazy" onerror="this.closest('.shot').classList.add('empty');this.remove()">
+            <span class="shot-hint">assets/instasave.png</span>
           </div>
           <div class="card-body">
-            <p class="kicker">browser extension</p>
+            <p class="kicker">chrome extension</p>
             <div class="title-row">
-              <h3>Project 01</h3>
+              <h3>InstaSave</h3>
               <span class="chip" data-status="live">live</span>
             </div>
-            <p class="blurb">One line about what it does and who it's for.</p>
+            <p class="blurb">Bulk-download your saved Instagram collections — photos, videos, carousels and metadata. No scrolling, fully local.</p>
           </div>
         </div>
 
         <div class="detail" id="detail-1" hidden>
           <dl class="facts">
-            <div><dt>built with</dt><dd>TypeScript, Chrome APIs</dd></div>
-            <div><dt>users</dt><dd>1.2k weekly</dd></div>
+            <div><dt>built with</dt><dd>Vue, Vite, Chrome MV3</dd></div>
+            <div><dt>status</dt><dd>v1.2 on the store, 1.3 packaged</dd></div>
           </dl>
-          <p>A slightly longer note on the problem it solves, why I built it, and what I'd change if I started again.</p>
+          <p>Instagram gives you no way to get your own saved collections back out. InstaSave pages the REST API 50 items at a time instead of scroll-and-scrape, so a large collection is one pass rather than an hour of scrolling, and completed scans cache for 24 hours. Nothing is uploaded — the downloads go straight from Instagram's CDN to your disk.</p>
           <div class="links">
-            <a class="squiggle-link" href="#">visit site</a>
-            <a class="quiet-link" href="#">source</a>
+            <a class="squiggle-link" href="https://chromewebstore.google.com/search/InstaSave" rel="noopener">chrome web store</a>
           </div>
         </div>
 
@@ -131,63 +130,31 @@
       <article class="card" data-kind="extension">
         <div class="card-head">
           <div class="shot">
-            <img src="assets/project-02.png" alt="" loading="lazy" onerror="this.closest('.shot').classList.add('empty');this.remove()">
-            <span class="shot-hint">assets/project-02.png</span>
+            <img src="assets/uvd.png" alt="" loading="lazy" onerror="this.closest('.shot').classList.add('empty');this.remove()">
+            <span class="shot-hint">assets/uvd.png</span>
           </div>
           <div class="card-body">
-            <p class="kicker">browser extension</p>
+            <p class="kicker">chrome extension</p>
             <div class="title-row">
-              <h3>Project 02</h3>
-              <span class="chip" data-status="beta">beta</span>
+              <h3>Ultimate Video Downloader</h3>
+              <span class="chip" data-status="beta">in progress</span>
             </div>
-            <p class="blurb">One line about what it does and who it's for.</p>
+            <p class="blurb">Detect, clip and download video from streaming pages. Take the whole thing, or just the part you actually wanted.</p>
           </div>
         </div>
 
         <div class="detail" id="detail-2" hidden>
           <dl class="facts">
-            <div><dt>built with</dt><dd>Rust, WASM</dd></div>
-            <div><dt>users</dt><dd>invite only</dd></div>
+            <div><dt>built with</dt><dd>Chrome MV3, zero dependencies</dd></div>
+            <div><dt>handles</dt><dd>HLS, DASH, direct files</dd></div>
           </dl>
-          <p>Still rough. The Rust and WASM part is the whole reason this exists. The rest is scaffolding.</p>
+          <p>Most downloaders pull the entire video and trim afterwards. This one fetches only the segments covering the range you picked, so time and bandwidth scale with your clip and not with the source. A 30-second clip out of a 1.8&nbsp;GB file fetched about 1% of it. Everything runs locally — no account, no server.</p>
           <div class="links">
-            <a class="squiggle-link" href="#">visit site</a>
-            <a class="quiet-link" href="#">source</a>
+            <span class="quiet-link">not published yet</span>
           </div>
         </div>
 
         <div class="card-foot"><button type="button" class="more" aria-expanded="false" aria-controls="detail-2">+ more about this</button></div>
-      </article>
-
-      <article class="card" data-kind="site">
-        <div class="card-head">
-          <div class="shot">
-            <img src="assets/project-03.png" alt="" loading="lazy" onerror="this.closest('.shot').classList.add('empty');this.remove()">
-            <span class="shot-hint">assets/project-03.png</span>
-          </div>
-          <div class="card-body">
-            <p class="kicker">website</p>
-            <div class="title-row">
-              <h3>Project 03</h3>
-              <span class="chip" data-status="archived">archived</span>
-            </div>
-            <p class="blurb">One line about what it does and who it's for.</p>
-          </div>
-        </div>
-
-        <div class="detail" id="detail-3" hidden>
-          <dl class="facts">
-            <div><dt>built with</dt><dd>Astro, SQLite</dd></div>
-            <div><dt>users</dt><dd>retired 2025</dd></div>
-          </dl>
-          <p>Ran it for two years, then the API it depended on shut down. Kept here because it taught me a lot.</p>
-          <div class="links">
-            <a class="squiggle-link" href="#">visit site</a>
-            <a class="quiet-link" href="#">source</a>
-          </div>
-        </div>
-
-        <div class="card-foot"><button type="button" class="more" aria-expanded="false" aria-controls="detail-3">+ more about this</button></div>
       </article>
 
     </div>
@@ -201,10 +168,7 @@
       <h2>ideas i haven't built</h2>
       <p class="sub">Tick one if you want to steal it. I won't mind.</p>
       <ul class="ideas">
-        <li><button type="button" class="idea" aria-pressed="false"><span class="box" aria-hidden="true"></span><span>An idea, described in one honest sentence.</span></button></li>
-        <li><button type="button" class="idea" aria-pressed="false"><span class="box" aria-hidden="true"></span><span>Another one. Probably a weekend, probably useful.</span></button></li>
-        <li><button type="button" class="idea" aria-pressed="false"><span class="box" aria-hidden="true"></span><span>The one I keep coming back to and never start.</span></button></li>
-        <li><button type="button" class="idea" aria-pressed="false"><span class="box" aria-hidden="true"></span><span>A bad idea I'm keeping here for honesty.</span></button></li>
+        <li><button type="button" class="idea" aria-pressed="false"><span class="box" aria-hidden="true"></span><span>A full video editor that runs entirely in the browser — trim, crop, subtitles, no upload, no watermark, free.</span></button></li>
       </ul>
     </div>
 
@@ -212,8 +176,8 @@
       <h2>now</h2>
       <p class="kicker">updated this month</p>
       <dl class="now-list">
-        <div><dt>learning</dt><dd>Rust and WebAssembly.</dd></div>
-        <div><dt>building</dt><dd>A new extension, slowly.</dd></div>
+        <div><dt>learning</dt><dd>WebCodecs — video encoding in the browser, without a server.</dd></div>
+        <div><dt>building</dt><dd>Ultimate Video Downloader. InstaSave 1.3 is packaged and waiting on the store.</dd></div>
         <div><dt>open to</dt><dd>Freelance, small contracts, odd jobs.</dd></div>
       </dl>
     </div>
@@ -236,8 +200,6 @@
       <p>Got a project idea you want to collaborate on? Hit me up.</p>
       <div class="collab-links">
         <button type="button" class="squiggle-link copy-email" data-email="hi@khailunhao.dev">hi@khailunhao.dev</button>
-        <span class="or">or</span>
-        <a class="squiggle-link" href="https://x.com/" rel="noopener">x / twitter</a>
       </div>
     </div>
   </section>
@@ -250,8 +212,9 @@
     </div>
     <nav class="socials" aria-label="Elsewhere">
       <a href="https://github.com/klunhao" rel="me noopener">github</a>
-      <a href="https://x.com/" rel="me noopener">x</a>
-      <a href="https://bsky.app/" rel="me noopener">bluesky</a>
+      <!-- Add back once you give me the handles:
+      <a href="https://x.com/YOURHANDLE" rel="me noopener">x</a>
+      <a href="https://bsky.app/profile/YOURHANDLE" rel="me noopener">bluesky</a> -->
     </nav>
   </footer>
 </main>
