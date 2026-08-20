@@ -46,19 +46,6 @@
   }, { passive: true });
   paintProgress();
 
-  /* ---------------- mobile menu ---------------- */
-  const burger = $('#burger');
-  const mobileNav = $('#mobile-nav');
-
-  function setMenu(open) {
-    mobileNav.hidden = !open;
-    burger.setAttribute('aria-expanded', String(open));
-  }
-
-  burger.addEventListener('click', () => setMenu(mobileNav.hidden));
-  $$('a', mobileNav).forEach(a => a.addEventListener('click', () => setMenu(false)));
-  addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
-
   /* ---------------- workshop filter ---------------- */
   const cards     = $$('#project-grid .card');
   const emptyNote = $('#empty-note');
@@ -140,9 +127,9 @@
     });
   });
 
-  /* ---------------- active section in nav ---------------- */
+  /* ---------------- active dot on the side nav ---------------- */
   const links = new Map();
-  $$('.nav a[href^="#"]').forEach(a => links.set(a.getAttribute('href').slice(1), a));
+  $$('.sidenav a[href^="#"]').forEach(a => links.set(a.getAttribute('href').slice(1), a));
 
   const targets = [...links.keys()].map(id => document.getElementById(id)).filter(Boolean);
 

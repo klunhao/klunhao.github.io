@@ -54,7 +54,7 @@
 /* ---------- base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
 
 body {
   margin: 0;
@@ -122,13 +122,6 @@ img { max-width: 100%; display: block; }
   color: var(--ink); text-decoration: none;
 }
 
-.nav { display: flex; gap: 4px; align-items: center; }
-.nav a {
-  font: 400 20px/1 var(--hand); color: var(--ink); text-decoration: none;
-  border: 2px solid transparent; border-radius: 8px; padding: 7px 12px;
-  transition: background .14s;
-}
-.nav a:hover, .nav a.is-active { background: var(--accent); color: var(--ink); }
 
 .dots { display: flex; gap: 6px; align-items: center; margin-left: 4px; }
 .dot {
@@ -140,26 +133,36 @@ img { max-width: 100%; display: block; }
 .dot[data-theme-pick="light"] { background: #FDF7DC; border-color: #2C5B33; }
 .dot[data-theme-pick="dark"]  { background: #131415; border-color: #EFEDE8; }
 
-.burger {
-  display: none; flex-direction: column; gap: 4px; padding: 9px 11px;
-  background: none; border: 2px solid var(--ink);
-  border-radius: var(--pill); cursor: pointer;
-}
-.burger span { display: block; width: 18px; height: 2px; background: var(--ink); }
-.burger span:last-child { width: 12px; }
 
-.mobile-nav {
-  padding: 6px 20px 16px;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
-  border-top: 1px dashed var(--hair);
+
+/* ---------- side dot nav ---------- */
+.vh {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip-path: inset(50%); white-space: nowrap;
 }
-.mobile-nav[hidden] { display: none; }
-@media (min-width: 761px) { .mobile-nav { display: none; } }
-.mobile-nav a {
-  font: 400 18px/1 var(--hand); color: var(--ink); text-decoration: none;
-  border: 2px solid var(--ink); border-radius: var(--pill);
-  padding: 11px 12px; text-align: center;
+
+.sidenav {
+  position: fixed; right: 16px; top: 50%; transform: translateY(-50%);
+  z-index: 55; display: flex; flex-direction: column; gap: 15px; align-items: center;
 }
+.sidenav a {
+  position: relative; display: block; width: 11px; height: 11px;
+  border: 2px solid var(--ink); border-radius: 50%; background: transparent;
+  transition: background .16s ease, transform .16s ease;
+}
+.sidenav a:hover, .sidenav a.is-active { background: var(--accent); }
+.sidenav a.is-active { transform: scale(1.4); }
+
+/* label rides out on hover — the dots alone don't say where they go */
+.sidenav a::after {
+  content: attr(data-label);
+  position: absolute; right: 20px; top: 50%; transform: translateY(-50%);
+  font: 400 17px/1 var(--hand); color: var(--ink); white-space: nowrap;
+  background: var(--surface); border: 2px solid var(--ink);
+  border-radius: var(--pill); padding: 5px 11px;
+  opacity: 0; pointer-events: none; transition: opacity .14s ease;
+}
+.sidenav a:hover::after, .sidenav a:focus-visible::after { opacity: 1; }
 
 /* ---------- layout ---------- */
 .wrap { max-width: 1000px; margin: 0 auto; padding: 0 40px; }
@@ -430,10 +433,11 @@ footer h2 { margin: 0 0 12px; font: 700 30px/1 var(--hand); }
 @media (max-width: 760px) {
   html { scroll-padding-top: 72px; }
   .bar-inner { padding: 14px 20px; }
-  .nav { display: none; }
-  .burger { display: flex; }
   .dots { margin-left: auto; margin-right: 10px; }
   .wrap { padding: 0 20px; }
+  .sidenav { right: 7px; gap: 12px; }
+  .sidenav a { width: 9px; height: 9px; }
+  .sidenav a::after { display: none; }
 
   .hero {
     display: flex; flex-direction: column; gap: 26px;
